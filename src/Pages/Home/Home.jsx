@@ -1,4 +1,4 @@
-import {Container} from './style.js'
+import { Container, Card} from './style.js'
 import morty from '../../Assets/morty.gif'
 
 import { useState, useEffect } from 'react'
@@ -8,9 +8,9 @@ export const Home  = () => {
   const [search, setSearch] = useState('')
   const [gifPos, setGifPos] = useState('')
   const [searchResult, setSearchResult] = useState();
-  const [numberOfResults, setNumberOfResults] = useState()
+  const [numberOfResults, setNumberOfResults] = useState();
+  const [cardInfo, setCardInfo] = useState([]);
   
-
   function getGifBackToScene() {
     setGifPos('show')
   }
@@ -20,10 +20,13 @@ export const Home  = () => {
   }
 
   useEffect(() => {
+    
     (async () => {
       try {
+        
         const response = await api.get(`character/?name=${search}`)
         const result = await response.data
+        
 
         if (result && search.length !== 0) {
           setNumberOfResults(result.info.count)
@@ -31,8 +34,20 @@ export const Home  = () => {
           
           removeGifFromScene()
         }
+
+        setCardInfo([{
+          id: searchResult.id,
+          name: searchResult.name,
+          status: searchResult.status,
+          image: searchResult.image,
+          specie: searchResult.species,
+          livesAt: searchResult.location.name,
+          similarResultsCount: numberOfResults
+        }])
       } catch(e) {
         getGifBackToScene()
+      } finally {
+        if (search.length === 0) setCardInfo([])
       } 
     })()
   },[search])
@@ -51,7 +66,24 @@ export const Home  = () => {
           }}/>
         </div>
       </div>
-      <img className={gifPos} src={morty} alt="morty" />
+    
+      {cardInfo && cardInfo.map(card => {
+        return (
+          <Card key={card.id}>
+            <div className="main">
+              <img src={card.image} alt={card.name} />
+              <h3>{card.name}</h3>
+            </div>
+            <div className="description">
+              <p>Status: {card.status}</p>
+              <p>Specie: {card.specie}</p>
+              <p>Last location: {card.livesAt}</p>
+            </div>
+          </Card>
+        )
+      })}
+      <img className={gifPos} id="home-gif"src={morty} alt="morty" />
+      
     </Container>
   )
 }

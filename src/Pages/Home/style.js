@@ -48,7 +48,7 @@ export const Container = styled.div`
   justify-content: space-between;
   
 
-  img {
+  img#home-gif {
     position: absolute;
     transition: all 2s;
     animation: gifMove 1s forwards;
@@ -89,7 +89,7 @@ export const Container = styled.div`
     input {
       height: 40px;
       border: 1px solid hsl(var(--saturated-green));
-      width: 50%;
+      max-width: 360px;
       outline: none;
       font-size: 1.5rem;
       padding: 1rem;
@@ -98,5 +98,53 @@ export const Container = styled.div`
       background: 0;
     }
   }
+`
 
+export const Card = styled.div`
+  width: 320px;
+  height: 320px;
+  background: rgb(156,234,46);
+  background: linear-gradient(0deg, rgba(156,234,46,1) 0%, rgba(103,150,37,1) 90%, rgba(67,99,21,1) 100%); 
+  border-radius: 0.5rem;
+  padding: 1rem;
+  
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  .main {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    align-items: center;
+    position: relative;
+    left: -4rem;
+    top: -2rem;
+    color: hsl(var(--text-gray));
+  }
+
+  img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+  
+  h3 {
+    font-size: 2rem;
+  }
+
+  p{
+    text-align: left;
+  }
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    gap: 10px;
+    color: hsl(var(--light-black));
+  }
+  
 `
