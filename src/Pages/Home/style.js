@@ -1,6 +1,41 @@
 import styled from "styled-components";
 
+
+
 export const Container = styled.div`
+
+  //Animations
+  @keyframes gifMove {
+    0% {
+      transform: rotate(0deg) translateX(80rem);
+    }
+
+    100% {
+      transform: rotate(-8deg) translateX(40rem) translateY(2rem);
+    }
+  }
+
+  @keyframes hide {
+    0% {
+      transform: rotate(-8deg) translateX(40rem);
+    }
+
+    100% {
+      transform: rotate(0deg) translateX(80rem) translateY(0)
+    }
+  }
+
+  @keyframes show {
+    0% {
+      transform: rotate(20deg) translateX(999px) translateY(0)
+    }
+
+    100% {
+      transform: rotate(-8deg) translateX(40rem) translateY(2rem);
+    }
+  }
+
+  //Start
   height: calc(100vh - 80px);
   
   width: 100%;
@@ -11,31 +46,21 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  @keyframes gifMove {
-    0% {
-      transform: rotate(0deg);
-    }
-
-    50% {
-      transform: rotate(-30deg) translateX(-5rem) translateY(-5rem);
-    }
-
-    100% {
-      transform: rotate(0deg) translateX(0) translateY(0);
-    }
-  }
+  
 
   img {
-    animation: gifMove 10s infinite;
-  }
+    position: absolute;
+    transition: all 2s;
+    animation: gifMove 1s forwards;
+    
 
-  img.hide {
-    display: none;
-  }
-
-  img.show {
-    display: block;
+    &.hide {
+      animation: hide 1s forwards;
+    }
+    &.show {
+      animation: show 1s forwards;
+      animation: gifMove 1s forwards;
+    }
   }
 
   .apresentation {

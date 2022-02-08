@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     background: hsl(var(--light-black));
+    overflow: hidden;
   }
 
   body, button,

@@ -9,6 +9,7 @@ export const Home  = () => {
   const [gifPos, setGifPos] = useState('')
   const [searchResult, setSearchResult] = useState();
   const [numberOfResults, setNumberOfResults] = useState()
+  
 
   function getGifBackToScene() {
     setGifPos('show')
@@ -23,23 +24,19 @@ export const Home  = () => {
       try {
         const response = await api.get(`character/?name=${search}`)
         const result = await response.data
-        
+
         if (result && search.length !== 0) {
           setNumberOfResults(result.info.count)
           setSearchResult(result.results[0])
-          console.log(searchResult)
-          console.log(numberOfResults)
+          
           removeGifFromScene()
         }
       } catch(e) {
         getGifBackToScene()
-      }
+      } 
     })()
   },[search])
     
-    
-
-
   return (
     <Container>
       <div className="apresentation">
@@ -48,8 +45,9 @@ export const Home  = () => {
           <p className="description">Use the field below to search for a character.</p>
         </div>
         <div className="search">
-          <input type="text" placeholder="Morty Smith" value={search} onInput={(e) => {
-            setSearch(e.target.value)
+          <input type="text" placeholder="Morty Smith" value={search} onChange={(e) => {
+            if (e.target.value.length === 0) getGifBackToScene()
+            setSearch(e.target.value) 
           }}/>
         </div>
       </div>
