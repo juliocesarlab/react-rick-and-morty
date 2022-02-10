@@ -4,7 +4,7 @@ const GlobalStyle = createGlobalStyle`
   :root {
     --default-green:  85, 57%, 55%;
     --saturated-green: 85, 82%, 55%;
-    --light-black: 	0.50	0.10%	0.06%;
+    --light-black: 	240, 5%, 7%;
     --text-gray: 0, 0%, 93%;
   }
 

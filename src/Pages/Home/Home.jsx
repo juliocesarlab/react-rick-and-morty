@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Container, Card} from './style.js'
 import morty from '../../Assets/morty.gif'
 
@@ -7,63 +8,72 @@ import { api } from '../../Services/api.js'
 export const Home  = () => {
   const [search, setSearch] = useState('')
   const [gifPos, setGifPos] = useState('')
-  const [searchResult, setSearchResult] = useState();
-  const [numberOfResults, setNumberOfResults] = useState();
-  const [cardInfo, setCardInfo] = useState([]);
+  const [cardInfo, setCardInfo] = useState();
+
   
-  function getGifBackToScene() {
+  function getItemBackToScene() {
     setGifPos('show')
   }
 
-  function removeGifFromScene() {
+  function removeItemFromScene() {
     setGifPos('hide')
   }
 
   useEffect(() => {
     
-    (async () => {
-      try {
-        
-        const response = await api.get(`character/?name=${search}`)
-        const result = await response.data
-        
-
-        if (result && search.length !== 0) {
-          setNumberOfResults(result.info.count)
-          setSearchResult(result.results[0])
-          
-          removeGifFromScene()
+      (async () => {
+        if (search.length === 0) {
+          getItemBackToScene();
+          setCardInfo('')
+          return
         }
 
-        setCardInfo([{
-          id: searchResult.id,
-          name: searchResult.name,
-          status: searchResult.status,
-          image: searchResult.image,
-          specie: searchResult.species,
-          livesAt: searchResult.location.name,
-          similarResultsCount: numberOfResults
-        }])
-      } catch(e) {
-        getGifBackToScene()
-      } finally {
-        if (search.length === 0) setCardInfo([])
-      } 
-    })()
-  },[search])
-    
+        try {
+          const response = await api.get(`/character/?name=${search}`)
+          const result = await response.data
+
+          let filteredSearch = result.results.filter(character => 
+            character.name.toLowerCase().includes(search.toLowerCase())
+          )
+          console.log(filteredSearch)
+          filteredSearch = filteredSearch.filter(character => 
+            character.name.toLowerCase().startsWith(search.toLowerCase())
+          )
+          
+          if (filteredSearch.length >= 1) {
+            const {id, name, species, status ,image, location } = filteredSearch[0];
+            console.log(filteredSearch)
+            removeItemFromScene()
+
+            setCardInfo([{
+              id,
+              name,
+              species,
+              status,
+              image,
+              location: location.name
+            }])
+          }
+        } catch(e) {
+          setCardInfo('')
+          getItemBackToScene()
+        } 
+        
+        
+      })()
+   
+  }, [search])
   return (
     <Container>
       <div className="apresentation">
         <div className="text">
-          <h1 className="title">All <br/>Characters<br/>Here</h1>
+          <h1 className="title"><br/>Characters<br/>Here</h1>
           <p className="description">Use the field below to search for a character.</p>
         </div>
         <div className="search">
-          <input type="text" placeholder="Morty Smith" value={search} onChange={(e) => {
-            if (e.target.value.length === 0) getGifBackToScene()
-            setSearch(e.target.value) 
-          }}/>
+          <input type="text" placeholder="Morty Smith" 
+          value={search} 
+          onChange={(e) => setSearch(e.target.value)}/>
         </div>
       </div>
     
@@ -76,8 +86,8 @@ export const Home  = () => {
             </div>
             <div className="description">
               <p>Status: {card.status}</p>
-              <p>Specie: {card.specie}</p>
-              <p>Last location: {card.livesAt}</p>
+              <p>Specie: {card.species}</p>
+              <p>Last location: {card.location}</p>
             </div>
           </Card>
         )

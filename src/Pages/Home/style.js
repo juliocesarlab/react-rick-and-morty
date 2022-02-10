@@ -52,8 +52,8 @@ export const Container = styled.div`
     position: absolute;
     transition: all 2s;
     animation: gifMove 1s forwards;
-    
 
+   
     &.hide {
       animation: hide 1s forwards;
     }
@@ -104,7 +104,7 @@ export const Card = styled.div`
   width: 320px;
   height: 320px;
   background: rgb(156,234,46);
-  background: linear-gradient(0deg, rgba(156,234,46,1) 0%, rgba(103,150,37,1) 90%, rgba(67,99,21,1) 100%); 
+  background: linear-gradient(0deg, rgba(156,234,46,1) 20%, rgba(103,150,37,1) 90%, rgba(67,99,21,1) 100%); 
   border-radius: 0.5rem;
   padding: 1rem;
   
@@ -113,6 +113,10 @@ export const Card = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  opacity: 0.9;
+
+  font-family: 'M PLUS 1 Code', sans-serif;
   
   .main {
     display: flex;
@@ -129,10 +133,15 @@ export const Card = styled.div`
     width: 150px;
     height: 150px;
     border-radius: 50%;
+    background: hsl(var(--saturated-green));
+    padding: 5px;
+
+    background: linear-gradient(0deg, rgba(156,234,46,1) 20%, rgba(103,150,37,1) 90%, rgba(67,99,21,1) 100%); 
   }
   
   h3 {
-    font-size: 2rem;
+    font-size: 2rem ;
+    font-family: 'M PLUS 1 Code', sans-serif;
   }
 
   p{
@@ -144,7 +153,14 @@ export const Card = styled.div`
     flex-direction: column;
     font-size: 1.2rem;
     gap: 10px;
-    color: hsl(var(--light-black));
+    color: white;
+    background: hsl(var(--saturated-green));
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    left: 4rem;
+    bottom: 1rem;
+    position: relative;
+    
   }
   
 `
