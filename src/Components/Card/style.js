@@ -48,8 +48,9 @@ export const StyledCard = styled.div`
   }
 
   img {
-    width: 180px;
-    height: 150px;
+    max-width: 120px;
+    width: 100%;
+    max-height: 150px;
     border-radius: 50%;
     background: hsl(var(--saturated-green));
     padding: 5px;
