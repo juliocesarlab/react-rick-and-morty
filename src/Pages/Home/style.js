@@ -35,6 +35,21 @@ export const Container = styled.div`
     }
   }
 
+  @keyframes flutuate {
+  0% {
+    -webkit-transform: translateY(-16px);
+    transform: translateY(-16px);
+  }
+  50% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px) ;
+  }
+  100% {
+    -webkit-transform: translateY(-16px);
+    transform: translateY(-16px);
+  }
+  }
+
   //Start
   height: calc(100vh - 80px);
   
@@ -114,9 +129,14 @@ export const Card = styled.div`
   align-items: center;
   justify-content: center;
 
-  opacity: 0.9;
+
 
   font-family: 'M PLUS 1 Code', sans-serif;
+  box-shadow: hsl(var(--saturated-green)) 0px 20px 30px -10px;
+
+  transition: all 1s;
+  transform: perspective(1px) translateZ(0);
+  animation: flutuate 2s infinite;
   
   .main {
     display: flex;
@@ -137,6 +157,7 @@ export const Card = styled.div`
     padding: 5px;
 
     background: linear-gradient(0deg, rgba(156,234,46,1) 20%, rgba(103,150,37,1) 90%, rgba(67,99,21,1) 100%); 
+    box-shadow: hsl(var(--saturated-green)) 0px 20px 30px -10px;
   }
   
   h3 {
@@ -160,6 +181,8 @@ export const Card = styled.div`
     left: 4rem;
     bottom: 1rem;
     position: relative;
+
+    background: linear-gradient(180deg, rgba(156,234,46,1) 0%, rgba(103,150,37,1) 150%, rgba(67,99,21,1) 200%); 
     
   }
   
