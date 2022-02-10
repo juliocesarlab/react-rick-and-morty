@@ -1,9 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { Container, Card} from './style.js'
+import { Container} from './style.js'
 import morty from '../../Assets/morty.gif'
 
 import { useState, useEffect } from 'react'
 import { api } from '../../Services/api.js'
+
+import { Card } from '../../Components/Card/Card.jsx'
 
 export const Home  = () => {
   const [search, setSearch] = useState('')
@@ -58,8 +60,6 @@ export const Home  = () => {
           setCardInfo('')
           getItemBackToScene()
         } 
-        
-        
       })()
    
   }, [search])
@@ -79,17 +79,12 @@ export const Home  = () => {
     
       {cardInfo && cardInfo.map(card => {
         return (
-          <Card key={card.id}>
-            <div className="main">
-              <img src={card.image} alt={card.name} />
-              <h3>{card.name}</h3>
-            </div>
-            <div className="description">
-              <p>Status: {card.status}</p>
-              <p>Specie: {card.species}</p>
-              <p>Last location: {card.location}</p>
-            </div>
-          </Card>
+          <Card id={card.id} 
+          name={card.name} 
+          status={card.status} 
+          species={card.species}
+          location={card.location}
+          image={card.image}/>
         )
       })}
       <img className={gifPos} id="home-gif"src={morty} alt="morty" />
