@@ -6,12 +6,17 @@ const GlobalStyle = createGlobalStyle`
     --saturated-green: 85, 82%, 55%;
     --light-black: 	240, 5%, 7%;
     --text-gray: 0, 0%, 93%;
+
+    @media(max-width: 786px) {
+      font-size: 87.5%;
+    }
   }
 
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow: hidden;
   }
 
   body {

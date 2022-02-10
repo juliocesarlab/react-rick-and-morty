@@ -48,12 +48,30 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  
+
+  @media(max-width: 786px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
   
 
   img#home-gif {
     position: absolute;
     transition: all 2s;
     animation: gifMove 1s forwards;
+
+    @media(max-width: 786px) {
+      
+      bottom: -25%;
+      left: -150%;
+      max-width: 300px;
+      animation: none;
+    
+    }
 
    
     &.hide {
@@ -77,13 +95,19 @@ export const Container = styled.div`
   .apresentation .text {
     color: hsl(var(--saturated-green));
     margin-bottom: 4rem;
-
     h1 {
     font-size: 4rem;
     }
 
     p{
       font-size: 1.5rem;
+    }
+
+    @media(max-width: 786px) {
+      margin-bottom: 2rem;
+      h1 {
+        font-size: 3rem;
+      }
     }
   }
 
@@ -92,6 +116,7 @@ export const Container = styled.div`
       height: 40px;
       border: 1px solid hsl(var(--saturated-green));
       max-width: 360px;
+      width: 100%;
       outline: none;
       font-size: 1.5rem;
       padding: 1rem;
@@ -100,4 +125,6 @@ export const Container = styled.div`
       background: 0;
     }
   }
+
+  
 `

@@ -37,14 +37,14 @@ export const Home  = () => {
           let filteredSearch = result.results.filter(character => 
             character.name.toLowerCase().includes(search.toLowerCase())
           )
-          console.log(filteredSearch)
+          
           filteredSearch = filteredSearch.filter(character => 
             character.name.toLowerCase().startsWith(search.toLowerCase())
           )
           
           if (filteredSearch.length >= 1) {
             const {id, name, species, status ,image, location } = filteredSearch[0];
-            console.log(filteredSearch)
+           
             removeItemFromScene()
 
             setCardInfo([{
@@ -67,7 +67,7 @@ export const Home  = () => {
     <Container>
       <div className="apresentation">
         <div className="text">
-          <h1 className="title"><br/>Characters<br/>Here</h1>
+          <h1 className="title">All<br/>Characters<br/>Here</h1>
           <p className="description">Use the field below to search for a character.</p>
         </div>
         <div className="search">
