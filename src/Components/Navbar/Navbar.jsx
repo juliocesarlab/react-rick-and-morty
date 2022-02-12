@@ -1,14 +1,15 @@
 import { StyledNav } from "./style"
 import  logo  from '../../Assets/logo.png'
+import { Link } from 'react-router-dom'
 
-export const Navbar = () => {
+export const Navbar = ({linkTitle, linkTo}) => {
   return (
     <StyledNav>
       <div className="wrapper">
         <div className="logo-wrapper">
           <img src={logo} alt="Rick and Morty" />
         </div>
-        <a href="#">All Characters</a>
+        <Link to={linkTo}>{linkTitle}</Link>
       </div>
     </StyledNav>
   )

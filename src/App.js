@@ -1,25 +1,14 @@
-import GlobalStyle  from './styles/style.global.js'
-import { Navbar } from './Components/Navbar/Navbar'
-import { Home } from './Pages/Home/Home'
+import GlobalStyle  from './styles/style.global'
 import Particles from 'react-tsparticles'
 
 
-function App() {
-
-  const particlesInit = (main) => {
-    console.log(main);
-
-    // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
-  };
-
-  const particlesLoaded = (container) => {
-    console.log(container);
-  };
+export function App() {
+  const particlesInit = (main) => console.log(main);
+  const particlesLoaded = (container) => console.log(container);
+  
   return (
     <>
       <GlobalStyle />
-      <Navbar />
-      <Home/>
       <Particles
       id="tsparticles"
       init={particlesInit}
@@ -127,11 +116,8 @@ function App() {
         }
       }}
     />
-   
-      
-      
     </>
   )
 }
 
-export default App;
+export default App

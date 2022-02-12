@@ -15,13 +15,11 @@ const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    overflow: hidden;
+    box-sizing: border-box; 
   }
 
   body {
     background: hsl(var(--light-black));
-    overflow: hidden;
   }
 
   body, button,

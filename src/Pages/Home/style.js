@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 
-export const Container = styled.div`
+export const HomeContainer = styled.div`
 
   //Animations
   @keyframes gifMove {
@@ -49,7 +49,6 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  
 
   @media(max-width: 786px) {
     flex-direction: column;

@@ -1,11 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { Container} from './style.js'
-import morty from '../../Assets/morty.gif'
+import { HomeContainer } from './style.js'
+import {Navbar} from "../../Components/Navbar/Navbar"
 
 import { useState, useEffect } from 'react'
 import { api } from '../../Services/api.js'
 
 import { Card } from '../../Components/Card/Card.jsx'
+
+import morty from '../../Assets/morty.gif'
 
 export const Home  = () => {
   const [search, setSearch] = useState('')
@@ -64,7 +66,9 @@ export const Home  = () => {
    
   }, [search])
   return (
-    <Container>
+    <>
+    <Navbar linkTitle="See All Characters" linkTo="allCharacters"/>
+    <HomeContainer>
       <div className="apresentation">
         <div className="text">
           <h1 className="title">All<br/>Characters<br/>Here</h1>
@@ -88,7 +92,7 @@ export const Home  = () => {
         )
       })}
       <img className={gifPos} id="home-gif"src={morty} alt="morty" />
-      
-    </Container>
+    </HomeContainer>
+    </>
   )
 }
