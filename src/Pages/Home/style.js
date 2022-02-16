@@ -18,16 +18,19 @@ export const HomeContainer = styled.div`
   @keyframes hide {
     0% {
       transform: rotate(-8deg) translateX(40rem);
+      
     }
 
     100% {
-      transform: rotate(0deg) translateX(80rem) translateY(0)
+      transform: rotate(0deg) translateX(80rem) translateY(0);
+      
     }
   }
 
   @keyframes show {
     0% {
-      transform: rotate(20deg) translateX(999px) translateY(0)
+      transform: rotate(20deg) translateX(999px) translateY(0);
+      
     }
 
     100% {
@@ -48,8 +51,8 @@ export const HomeContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-
+  
+  
   @media(max-width: 786px) {
     flex-direction: column;
     justify-content: center;
@@ -113,14 +116,15 @@ export const HomeContainer = styled.div`
   .apresentation .search {
     input {
       height: 40px;
-      border: 1px solid hsl(var(--saturated-green));
+      border: 0;
+      border-bottom: 1px solid hsl(var(--saturated-green));
       max-width: 360px;
       width: 100%;
       outline: none;
       font-size: 1.5rem;
       padding: 1rem;
-      color: hsl(var(--saturated-green));
-      border-radius: 0.5rem;
+      //color: hsl(var(--saturated-green));
+      color: #fff;
       background: 0;
     }
   }

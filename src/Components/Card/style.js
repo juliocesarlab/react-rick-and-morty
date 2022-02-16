@@ -40,7 +40,6 @@ export const StyledCard = styled.div`
   .main {
     display: flex;
     gap: 1rem;
-    padding: 1rem;
     align-items: center;
     position: relative;
  
@@ -48,9 +47,10 @@ export const StyledCard = styled.div`
   }
 
   img {
-    max-width: 120px;
     width: 100%;
+    max-width: 100px;
     max-height: 150px;
+    height: 100px;
     border-radius: 50%;
     background: hsl(var(--saturated-green));
     padding: 5px;
@@ -88,10 +88,6 @@ export const StyledCard = styled.div`
       left: 0rem;
       bottom: 0rem;
       background: none;
-
-      p {
-        border-bottom: 1px dashed #b3b3b5;
-      }
     }
   }
   

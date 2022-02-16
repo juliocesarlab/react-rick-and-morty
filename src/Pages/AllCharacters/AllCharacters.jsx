@@ -3,6 +3,7 @@ import {AllCharactersHeader, AllCharactersContainer} from './style.js'
 import {Navbar} from "../../Components/Navbar/Navbar"
 import {useState, useEffect} from 'react'
 import {api} from "../../Services/api"
+import {Pagination} from "../../Components/Pagination/Pagination"
 
 export const AllCharacters = () => {
   const [content, setContent] = useState()
@@ -16,9 +17,11 @@ export const AllCharacters = () => {
   })
   return (
     <>
+      
       <Navbar linkTitle="Home" linkTo="/"/>
       <AllCharactersHeader>
         <h1>All Characters</h1>
+        <Pagination pageNumbers={42}/>
       </AllCharactersHeader>
 
       <AllCharactersContainer>
@@ -35,6 +38,7 @@ export const AllCharacters = () => {
         )
       })}
       </AllCharactersContainer>
+      
     </>
   )
 }
