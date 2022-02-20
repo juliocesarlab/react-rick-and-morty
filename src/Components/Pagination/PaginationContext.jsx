@@ -7,6 +7,8 @@ export const PaginationProvider = ({children}) => {
   const [activePage, setActivePage] = useState(1)
   const [maxPageButtons, setMaxPageButtons] = useState(5)
   const [numberOfPages, setNumberOfPages] = useState(0)
+  const [minPageShow, setMinPageShow] = useState(1)
+  const [maxPageShow, setMaxPageShow] = useState(5)
 
   useEffect(() => {
     (async() => {
@@ -20,9 +22,14 @@ export const PaginationProvider = ({children}) => {
 
   return(
     <PaginationContext.Provider 
-      value={{activePage, setActivePage, 
-      maxPageButtons, setMaxPageButtons, 
-      numberOfPages, setNumberOfPages}}>
+      value={
+        {activePage, setActivePage, 
+          maxPageButtons, setMaxPageButtons, 
+        numberOfPages, setNumberOfPages,
+        minPageShow, setMinPageShow,
+        maxPageShow, setMaxPageShow
+        }
+      }>
       {children}
     </PaginationContext.Provider>
   )

@@ -1,47 +1,58 @@
-import { PageButton, StyledPaginationWrapper } from './style'
+import { PageButton, StyledPaginationWrapper } from "./style";
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 
-import { usePagination, PaginationContext } from './PaginationContext'
+import { usePagination, PaginationContext } from "./PaginationContext";
 
-export const Pagination = ({pageNumbers, children}) => {
+export const Pagination = ({ pageNumbers, children }) => {
+  const {
+    activePage,
+    setActivePage,
+    numberOfPages,
+    minPageShow,
+    setMinPageShow,
+    maxPageShow,
+    setMaxPageShow,
+  } = usePagination(PaginationContext);
 
-  const { activePage, setActivePage, maxPageButtons, numberOfPages, setNumberOfPages} = usePagination(PaginationContext)
-
-  const [minPageShow, setMinPageShow] = useState(1)
-  const [maxPageShow, setMaxPageShow] = useState(5)
 
   //incremental arr
-  const pages = Array.from({length: numberOfPages}, (v, k) => k);
-
+  const pages = Array.from({ length: numberOfPages }, (v, k) => k + 1);
   function backPage() {
     if (activePage !== 1) {
-      setActivePage(activePage - 1)
-      setMinPageShow(minPageShow - 1)
-      setMaxPageShow(maxPageShow - 1)
+      setActivePage(activePage - 1);
+
+      if (numberOfPages <= 6) return;
+      setMinPageShow(minPageShow - 1);
+      setMaxPageShow(maxPageShow - 1);
     }
   }
 
   function nextPage() {
-    if (activePage === 42) return
-    setActivePage(activePage + 1)
-    setMaxPageShow(maxPageShow + 1)
-    setMinPageShow(minPageShow + 1)
+    if (activePage === 42 || activePage === numberOfPages) return;
+    setActivePage(activePage + 1);
+    if (numberOfPages <= 6) return;
+    setMaxPageShow(maxPageShow + 1);
+    setMinPageShow(minPageShow + 1);
   }
 
-  return(
+  return (
     <StyledPaginationWrapper>
-         <p  onClick={() => backPage()}>Back</p>
-         {
-           pages.map(index => (
-             index <= maxPageShow  && index >= minPageShow ?
-                index === activePage 
-                  ? <PageButton active onClick={() => setActivePage(index)} key={index}>{index}</PageButton>
-                  : <PageButton onClick={() => setActivePage(index)} key={index}>{index}</PageButton>
-              : null
-            ))
-         }
-         <p onClick={() => nextPage()}>Next</p>
+      <p onClick={() => backPage()}>Back</p>
+      {pages.map((index) =>
+        index <= maxPageShow && index >= minPageShow ? (
+          index === activePage ? (
+            <PageButton active onClick={() => setActivePage(index)} key={index}>
+              {index}
+            </PageButton>
+          ) : (
+            <PageButton onClick={() => setActivePage(index)} key={index}>
+              {index}
+            </PageButton>
+          )
+        ) : null
+      )}
+      <p onClick={() => nextPage()}>Next</p>
     </StyledPaginationWrapper>
-  )
-}
+  );
+};
