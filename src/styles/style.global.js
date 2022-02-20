@@ -18,6 +18,10 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box; 
   }
 
+  html, body {
+    scroll-behavior: smooth;
+  }
+
   body {
     background: hsl(var(--light-black));
   }

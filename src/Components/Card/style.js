@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const StyledCard = styled.div`
   width: 320px;
-  height: 320px;
+  height: 400px;
   background: rgb(156,234,46);
   background: linear-gradient(0deg, rgba(156,234,46,1) 20%, rgba(103,150,37,1) 90%, rgba(67,99,21,1) 100%); 
   border-radius: 0.5rem;
@@ -39,6 +39,8 @@ export const StyledCard = styled.div`
   
   .main {
     display: flex;
+    flex-direction: column;
+    
     gap: 1rem;
     align-items: center;
     position: relative;
@@ -48,9 +50,8 @@ export const StyledCard = styled.div`
 
   img {
     width: 100%;
-    max-width: 100px;
-    max-height: 150px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     background: hsl(var(--saturated-green));
     padding: 5px;
@@ -61,6 +62,7 @@ export const StyledCard = styled.div`
   h3 {
     font-size: 2rem ;
     font-family: 'M PLUS 1 Code', sans-serif;
+    height: 80px;
   }
 
   p{
@@ -71,16 +73,13 @@ export const StyledCard = styled.div`
     display: flex;
     flex-direction: column;
     font-size: 1.2rem;
+    height: 130px;
     gap: 10px;
     color: white;
     background: hsl(var(--saturated-green));
     padding: 0.5rem;
     border-radius: 0.5rem;
     
-    position: relative;
-    bottom: -10px;
-
-
     background: linear-gradient(180deg, rgba(156,234,46,1) 0%, rgba(103,150,37,1) 150%, rgba(67,99,21,1) 200%); 
     
     @media(max-width: 786px) {

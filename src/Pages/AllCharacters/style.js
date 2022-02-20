@@ -17,6 +17,13 @@ export const AllCharactersHeader = styled.div`
     font-size: 2.5rem;
     color: hsl(var(--saturated-green));
   }
+
+  @media(max-width: 786px) {
+    .main-header{
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
 `
 
 export const SearchInput = styled.div`
@@ -41,5 +48,32 @@ export const AllCharactersContainer = styled.div`
 
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1.2rem;
+`
+
+export const GoTop = styled.div`
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  color: white;
+  background: hsl(var(--saturated-green));
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+  position: fixed;
+
+  display: grid;
+  place-items: center;
+
+  cursor: pointer;
+
+  &:hover {
+      filter: brightness(0.8);
+    }
+
+  a {
+    color: #000;
+
+   
+  }
 `

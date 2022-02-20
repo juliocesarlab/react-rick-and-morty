@@ -2,15 +2,20 @@ import {
   AllCharactersHeader,
   AllCharactersContainer,
   SearchInput,
+  GoTop
 } from "./style.js";
+
+import arrowUp from '../../Assets/arrow-up.svg'
 
 import { Card } from "../../Components/Card/Card";
 import { Navbar } from "../../Components/Navbar/Navbar";
 import { Pagination } from "../../Components/Pagination/Pagination";
+import { Loading } from "../../Components/Loading/Loading"
 import {
   PaginationContext,
   usePagination,
 } from "../../Components/Pagination/PaginationContext";
+
 
 import { useState, useEffect } from "react";
 
@@ -75,6 +80,7 @@ export const AllCharacters = () => {
       </AllCharactersHeader>
 
       <AllCharactersContainer>
+        {!content && <Loading/>}
         {content ? (
           content.map((card) => {
             return (
@@ -93,6 +99,7 @@ export const AllCharacters = () => {
           <h1>Carregando</h1>
         )}
       </AllCharactersContainer>
+      <GoTop><a href="#">Go Up</a></GoTop>
     </>
   );
 };

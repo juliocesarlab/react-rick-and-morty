@@ -2,8 +2,7 @@ import styled from 'styled-components'
 
 export const StyledPaginationWrapper = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.5rem;
 
   p {
     display: flex;
