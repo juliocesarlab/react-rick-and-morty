@@ -51,18 +51,28 @@ export const HomeContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  overflow: hidden;
   
   
   @media(max-width: 786px) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
   }
   
+  .gif-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    padding: 10rem;
+    
+    inset: 0;
+    z-index: -1;
+  }
 
   img#home-gif {
-    position: absolute;
+    
     transition: all 2s;
     animation: gifMove 1s forwards;
 

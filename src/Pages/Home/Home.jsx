@@ -34,13 +34,9 @@ export const Home  = () => {
 
         try {
           const response = await api.get(`/character/?name=${search}`)
-          const result = await response.data
+          const result = await response.data.results
 
-          let filteredSearch = result.results.filter(character => 
-            character.name.toLowerCase().includes(search.toLowerCase())
-          )
-          
-          filteredSearch = filteredSearch.filter(character => 
+          const filteredSearch = result.filter(character => 
             character.name.toLowerCase().startsWith(search.toLowerCase())
           )
           
@@ -91,7 +87,9 @@ export const Home  = () => {
           image={card.image}/>
         )
       })}
-      <img className={gifPos} id="home-gif"src={morty} alt="morty" />
+      <div className="gif-wrapper">
+        <img className={gifPos} id="home-gif"src={morty} alt="morty" />
+      </div>
     </HomeContainer>
     </>
   )

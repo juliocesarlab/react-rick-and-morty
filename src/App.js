@@ -9,7 +9,6 @@ export function App() {
   return (
     <>
       <GlobalStyle />
-      
       <Particles
       id="tsparticles"
       init={particlesInit}

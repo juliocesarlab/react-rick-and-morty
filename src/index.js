@@ -12,7 +12,7 @@ ReactDOM.render(
     <App />
     <Routes>
       <Route  path='/' element={<Home />}/>
-        <Route path="allCharacters" element={<AllCharacters/>}/>
+      <Route path="allCharacters" element={<AllCharacters/>}/>
     </Routes>
   </BrowserRouter>
   </PaginationProvider>,
