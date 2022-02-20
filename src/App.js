@@ -6,7 +6,6 @@ export function App() {
   const particlesInit = (main) => console.log(main);
   const particlesLoaded = (container) => console.log(container);
  
-  
   return (
     <>
       <GlobalStyle />

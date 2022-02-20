@@ -1,36 +1,47 @@
 import { PageButton, StyledPaginationWrapper } from './style'
+
+import { useState, useEffect } from 'react'
+
 import { usePagination, PaginationContext } from './PaginationContext'
 
 export const Pagination = ({pageNumbers, children}) => {
 
-  const { activePage, setActivePage, maxPageButtons, setMaxPageButtons} = usePagination(PaginationContext)
-  console.log(activePage)
-  const pageNumbersArr = Array.from({length: pageNumbers}, () => 0)
+  const { activePage, setActivePage, maxPageButtons, numberOfPages, setNumberOfPages} = usePagination(PaginationContext)
+
+  const [minPageShow, setMinPageShow] = useState(1)
+  const [maxPageShow, setMaxPageShow] = useState(5)
+
+  //incremental arr
+  const pages = Array.from({length: numberOfPages}, (v, k) => k);
 
   function backPage() {
-    if (activePage === 1) return
-    setActivePage(activePage - 1)
+    if (activePage !== 1) {
+      setActivePage(activePage - 1)
+      setMinPageShow(minPageShow - 1)
+      setMaxPageShow(maxPageShow - 1)
+    }
   }
 
   function nextPage() {
     if (activePage === 42) return
     setActivePage(activePage + 1)
+    setMaxPageShow(maxPageShow + 1)
+    setMinPageShow(minPageShow + 1)
   }
 
   return(
     <StyledPaginationWrapper>
          <p  onClick={() => backPage()}>Back</p>
          {
-           pageNumbersArr.map((arr, index) => (
-            index === 0 || index > maxPageButtons
-            ? '' 
-            : index === activePage 
-            ? <PageButton active onClick={() => setActivePage(index)} key={index}>{index}</PageButton>
-            : <PageButton onClick={() => setActivePage(index)} key={index}>{index}</PageButton>
+           pages.map(index => (
+             index <= maxPageShow  && index >= minPageShow ?
+                index === activePage 
+                  ? <PageButton active onClick={() => setActivePage(index)} key={index}>{index}</PageButton>
+                  : <PageButton onClick={() => setActivePage(index)} key={index}>{index}</PageButton>
+              : null
             ))
          }
          <p onClick={() => nextPage()}>Next</p>
-         {children}
     </StyledPaginationWrapper>
   )
 }
