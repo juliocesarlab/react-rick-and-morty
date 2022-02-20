@@ -4,6 +4,14 @@ export const StyledPaginationWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+
+  p {
+    display: flex;
+    height: 2rem;
+    color: #fff;
+    align-items: center;
+    cursor: pointer;
+  }
 `
 
 export const PageButton = styled.button`
@@ -17,7 +25,9 @@ export const PageButton = styled.button`
 
   cursor: pointer;
 
-  ${({active}) => active && `background-color: hsl(var(--saturated-green));`}
+  ${({active}) => active && `
+    background-color: white;
+  `}
 
   &:hover{
     filter: brightness(0.8)
