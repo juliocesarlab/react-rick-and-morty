@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const StyledCard = styled.div`
  
   width: 320px;
-  height: 400px;
+  height: 435px;
   //background: linear-gradient(0deg, rgba(156,234,46,1) 20%, rgba(103,150,37,1) 90%, rgba(67,99,21,1) 100%); 
   //border: 1px solid rgba(156,234,46,1);
   border-radius: 0.5rem;
@@ -78,6 +78,7 @@ export const StyledCard = styled.div`
     display: flex;
     flex-direction: column;
     font-size: 1.2rem;
+    width: 100%;
     height: 130px;
     gap: 10px;
     color: rgba(156,234,46,1);
