@@ -8,9 +8,9 @@ export const Card = ({id, image, name, status, species, location}) => {
       <h3>{name}</h3>
     </div>
     <div className="description">
-      <p>Status: {status}</p>
-      <p>Specie: {species}</p>
-      <p>Last location: {location}</p>
+      <p><b>Status:</b> {status}</p>
+      <p><b>Specie:</b> {species}</p>
+      <p><b>Last location:</b> {location}</p>
     </div>
   </StyledCard>
  )

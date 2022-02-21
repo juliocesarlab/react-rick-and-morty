@@ -1,12 +1,15 @@
 import styled from 'styled-components'
 
 export const StyledCard = styled.div`
+ 
   width: 320px;
   height: 400px;
-  background: rgb(156,234,46);
-  background: linear-gradient(0deg, rgba(156,234,46,1) 20%, rgba(103,150,37,1) 90%, rgba(67,99,21,1) 100%); 
+  //background: linear-gradient(0deg, rgba(156,234,46,1) 20%, rgba(103,150,37,1) 90%, rgba(67,99,21,1) 100%); 
+  //border: 1px solid rgba(156,234,46,1);
   border-radius: 0.5rem;
   padding: 1rem;
+  background: rgba(0, 0,0 , 0.2);
+  box-shadow: hsl(var(--saturated-green)) 0px 10px 30px -20px;
   
 
   display: flex;
@@ -19,6 +22,8 @@ export const StyledCard = styled.div`
   transition: all 1s;
   transform: perspective(1px) translateZ(0);
   animation: flutuate 2s infinite;
+
+ 
 
   //animations
 
@@ -56,7 +61,7 @@ export const StyledCard = styled.div`
     background: hsl(var(--saturated-green));
     padding: 5px;
     background: linear-gradient(0deg, rgba(156,234,46,1) 20%, rgba(103,150,37,1) 90%, rgba(67,99,21,1) 100%); 
-    box-shadow: hsl(var(--saturated-green)) 0px 20px 30px -10px;
+    box-shadow: hsl(var(--saturated-green)) 0px 12px 50px -15px;
   }
   
   h3 {
@@ -75,12 +80,11 @@ export const StyledCard = styled.div`
     font-size: 1.2rem;
     height: 130px;
     gap: 10px;
-    color: white;
-    background: hsl(var(--saturated-green));
+    color: rgba(156,234,46,1);
     padding: 0.5rem;
     border-radius: 0.5rem;
     
-    background: linear-gradient(180deg, rgba(156,234,46,1) 0%, rgba(103,150,37,1) 150%, rgba(67,99,21,1) 200%); 
+    //background: linear-gradient(180deg, rgba(156,234,46,1) 0%, rgba(103,150,37,1) 150%, rgba(67,99,21,1) 200%); 
     
     @media(max-width: 786px) {
       position: relative;
@@ -89,5 +93,7 @@ export const StyledCard = styled.div`
       background: none;
     }
   }
+
+  
   
 `

@@ -58,8 +58,6 @@ export const HomeContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    
   }
   
 
@@ -81,8 +79,13 @@ export const HomeContainer = styled.div`
     @media(max-width: 786px) {
       position: absolute;
       left: -35rem;
-      bottom: 2.5rem;
-      width: 250px;
+      bottom: -5rem;
+      width: 220px;
+    }
+
+    @media (max-height: 650px) {
+      bottom: -10rem;
+      width: 180px
     }
     
     transition: all 2s;
@@ -104,10 +107,6 @@ export const HomeContainer = styled.div`
     
     height: 80%;
     flex: 1;
-
-    @media(max-width: 786px) {
-      margin-bottom: 4rem;
-    }
 
   }
 

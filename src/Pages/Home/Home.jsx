@@ -85,7 +85,7 @@ export const Home  = () => {
           species={card.species}
           location={card.location}
           image={card.image}
-          className="homeCard"
+          homeCard
           />
         )
       })}
