@@ -52,16 +52,17 @@ export const HomeContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
-  
+ 
   
   @media(max-width: 786px) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-  
+    
   }
   
+
   .gif-wrapper {
     position: absolute;
     width: 100%;
@@ -71,9 +72,18 @@ export const HomeContainer = styled.div`
     
     inset: 0;
     z-index: -1;
+
+    
   }
 
   img#home-gif {
+
+    @media(max-width: 786px) {
+      position: absolute;
+      left: -35rem;
+      bottom: 2.5rem;
+      width: 250px;
+    }
     
     transition: all 2s;
     animation: gifMove 1s forwards;
@@ -94,6 +104,10 @@ export const HomeContainer = styled.div`
     
     height: 80%;
     flex: 1;
+
+    @media(max-width: 786px) {
+      margin-bottom: 4rem;
+    }
 
   }
 
@@ -126,10 +140,11 @@ export const HomeContainer = styled.div`
       outline: none;
       font-size: 1.5rem;
       padding: 1rem;
-      //color: hsl(var(--saturated-green));
+      
       color: #fff;
       background: 0;
     }
+
   }
 
   

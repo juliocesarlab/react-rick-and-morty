@@ -84,7 +84,9 @@ export const Home  = () => {
           status={card.status} 
           species={card.species}
           location={card.location}
-          image={card.image}/>
+          image={card.image}
+          className="homeCard"
+          />
         )
       })}
       <div className="gif-wrapper">
