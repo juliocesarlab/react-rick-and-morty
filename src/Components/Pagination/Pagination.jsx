@@ -20,9 +20,10 @@ export const Pagination = ({ pageNumbers, children }) => {
   const pages = Array.from({ length: numberOfPages }, (v, k) => k + 1);
   function backPage() {
     if (activePage !== 1) {
+     
       setActivePage(activePage - 1);
-
-      if (numberOfPages <= 6) return;
+      
+      if (numberOfPages <= 6 || minPageShow - 1 === 0) return;
       setMinPageShow(minPageShow - 1);
       setMaxPageShow(maxPageShow - 1);
     }

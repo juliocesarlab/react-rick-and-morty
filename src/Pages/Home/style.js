@@ -58,6 +58,8 @@ export const HomeContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+  
   }
   
   .gif-wrapper {
@@ -76,16 +78,7 @@ export const HomeContainer = styled.div`
     transition: all 2s;
     animation: gifMove 1s forwards;
 
-    @media(max-width: 786px) {
-      
-      bottom: -25%;
-      left: -150%;
-      max-width: 300px;
-      animation: none;
-    
-    }
-
-   
+  
     &.hide {
       animation: hide 1s forwards;
     }
