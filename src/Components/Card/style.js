@@ -9,7 +9,7 @@ export const StyledCard = styled.div`
   border-radius: 0.5rem;
   padding: 1rem;
   background: rgba(0, 0,0 , 0.2);
-  box-shadow: hsl(var(--saturated-green)) 0px 10px 30px -20px;
+  box-shadow: hsl(var(--saturated-green)) 0px 0px 30px -20px;
   
 
   display: flex;

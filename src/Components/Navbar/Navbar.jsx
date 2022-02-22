@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 export const Navbar = ({linkTitle, linkTo}) => {
   return (
     <StyledNav>
-      <div className="wrapper">
+      <div className="wrapper" id="navbar">
         <div className="logo-wrapper">
           <img src={logo} alt="Rick and Morty" />
         </div>

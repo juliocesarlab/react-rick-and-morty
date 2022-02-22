@@ -5,7 +5,7 @@ import {
   GoTop
 } from "./style.js";
 
-import arrowUp from '../../Assets/arrow-up.svg'
+import arrowUp from '../../Assets/arrowUp.jpg'
 
 import { Card } from "../../Components/Card/Card";
 import { Navbar } from "../../Components/Navbar/Navbar";
@@ -64,7 +64,7 @@ export const AllCharacters = () => {
     <>
       <Navbar linkTitle="Home" linkTo="/" />
       <AllCharactersHeader>
-        <div className="main-header">
+        <div className="main-header" id="main-header">
           <h1>All Characters</h1>
           <Pagination pageNumbers={42} />
         </div>
@@ -99,7 +99,8 @@ export const AllCharacters = () => {
           <h1>Carregando</h1>
         )}
       </AllCharactersContainer>
-      <GoTop><a href="#">Go Up</a></GoTop>
+      <GoTop><a href="#navbar"><img src={arrowUp} alt="Up" width="50px"/></a></GoTop>
+      
     </>
   );
 };
