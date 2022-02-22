@@ -7,41 +7,41 @@ export const HomeContainer = styled.div`
   //Animations
   @keyframes gifMove {
     0% {
-      transform: rotate(0deg) translateX(80rem);
+      transform: rotate(0deg) translateX(2000px);
     }
 
     100% {
-      transform: rotate(-8deg) translateX(40rem) translateY(2rem);
+      transform: rotate(-8deg) translateX(0px) translateY(2rem);
     }
   }
 
   @keyframes hide {
     0% {
-      transform: rotate(-8deg) translateX(40rem);
+      transform: rotate(-8deg) translateX(0px);
       
     }
 
     100% {
-      transform: rotate(0deg) translateX(80rem) translateY(0);
+      transform: rotate(0deg) translateX(2000px) translateY(0);
       
     }
   }
 
   @keyframes show {
     0% {
-      transform: rotate(20deg) translateX(999px) translateY(0);
+      transform: rotate(20deg) translateX(2000px) translateY(0);
       
     }
 
     100% {
-      transform: rotate(-8deg) translateX(40rem) translateY(2rem);
+      transform: rotate(-8deg) translateX(0px) translateY(2rem);
     }
   }
 
   
 
   //Start
-  height: calc(100vh - 80px);
+  height: calc(100vh - 150px);
   
   width: 100%;
   max-width: 1100px;
@@ -62,30 +62,25 @@ export const HomeContainer = styled.div`
   
 
   .gif-wrapper {
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    padding: 10rem;
+    position: fixed;
+    right: 0;
     
-    inset: 0;
+    width: 50%;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
     z-index: -1;
-
-    
   }
 
   img#home-gif {
+    position: relative;
+    max-width: 400px;
+    max-height: 650px;
 
     @media(max-width: 786px) {
-      position: absolute;
-      left: -35rem;
-      bottom: -5rem;
-      width: 220px;
-    }
-
-    @media (max-height: 650px) {
-      bottom: -10rem;
-      width: 180px
+      display: none;
     }
     
     transition: all 2s;
@@ -93,7 +88,7 @@ export const HomeContainer = styled.div`
 
   
     &.hide {
-      animation: hide 1s forwards;
+      animation: hide 1.5s forwards;
     }
     &.show {
       animation: show 1s forwards;
@@ -104,10 +99,7 @@ export const HomeContainer = styled.div`
   .apresentation {
     display: flex;
     flex-direction: column;
-    
-    height: 80%;
     flex: 1;
-
   }
 
   .apresentation .text {
