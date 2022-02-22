@@ -21,7 +21,7 @@ export const StyledCard = styled.div`
 
   transition: all 1s;
   transform: perspective(1px) translateZ(0);
-  animation: show 1s 0s forwards, flutuate 2s 1s infinite;
+  animation: show 0.5s 0s forwards, flutuate 2s 0.5s infinite;
 
   @media (max-width: 320px) {
     height:  35rem;
