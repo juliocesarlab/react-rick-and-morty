@@ -43,6 +43,7 @@ export const HomeContainer = styled.div`
   //Start
   height: calc(100vh - 150px);
   
+  
   width: 100%;
   max-width: 1100px;
   margin: 0rem auto;
@@ -58,6 +59,11 @@ export const HomeContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
+    height: inherit;
+    min-height: calc(100vh - 90px);
+    
+    
   }
   
 
@@ -100,6 +106,10 @@ export const HomeContainer = styled.div`
     display: flex;
     flex-direction: column;
     flex: 1;
+
+    @media(max-width: 786px) {
+      margin-top: 6rem;
+    }
   }
 
   .apresentation .text {
@@ -135,8 +145,5 @@ export const HomeContainer = styled.div`
       color: #fff;
       background: 0;
     }
-
   }
-
-  
 `

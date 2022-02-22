@@ -99,7 +99,7 @@ export const AllCharacters = () => {
           <h1>Carregando</h1>
         )}
       </AllCharactersContainer>
-      <GoTop><a href="#navbar"><img src={arrowUp} alt="Up" width="50px"/></a></GoTop>
+      <GoTop><a href="#navbar"><img src={arrowUp} alt="Up" width="35px"/></a></GoTop>
       
     </>
   );

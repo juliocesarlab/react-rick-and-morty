@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const StyledNav = styled.nav`
- height: 80px;
+ height: 6rem;
  background: hsl(var(--light-black));
  padding: 0 2rem;
 
@@ -32,7 +32,7 @@ export const StyledNav = styled.nav`
     align-items: center;
 
     img {
-      width: 160px;
+      width: 10rem;
     }
 
   }

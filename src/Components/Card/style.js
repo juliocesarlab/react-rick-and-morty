@@ -2,8 +2,8 @@ import styled from 'styled-components'
 
 export const StyledCard = styled.div`
  
-  width: 320px;
-  height: 435px;
+  width: 20rem;
+  height: 28rem;
   //background: linear-gradient(0deg, rgba(156,234,46,1) 20%, rgba(103,150,37,1) 90%, rgba(67,99,21,1) 100%); 
   //border: 1px solid rgba(156,234,46,1);
   border-radius: 0.5rem;
@@ -22,6 +22,10 @@ export const StyledCard = styled.div`
   transition: all 1s;
   transform: perspective(1px) translateZ(0);
   animation: flutuate 2s infinite;
+
+  @media (max-width: 320px) {
+    height:  35rem;
+  }
 
  
 
@@ -55,8 +59,8 @@ export const StyledCard = styled.div`
 
   img {
     width: 100%;
-    width: 150px;
-    height: 150px;
+    width: 12rem;
+    height: 12rem;
     border-radius: 50%;
     background: hsl(var(--saturated-green));
     padding: 5px;
@@ -79,7 +83,7 @@ export const StyledCard = styled.div`
     flex-direction: column;
     font-size: 1.2rem;
     width: 100%;
-    height: 130px;
+    height: 8rem;
     gap: 10px;
     color: rgba(156,234,46,1);
     padding: 0.5rem;
@@ -90,7 +94,7 @@ export const StyledCard = styled.div`
     @media(max-width: 786px) {
       position: relative;
       left: 0rem;
-      bottom: 0rem;
+      bottom: 1.5rem;
       background: none;
     }
   }

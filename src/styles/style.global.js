@@ -10,6 +10,10 @@ const GlobalStyle = createGlobalStyle`
     @media(max-width: 786px) {
       font-size: 87.5%;
     }
+
+    @media(max-width: 320px) {
+      font-size: 70.5%;
+    }
   }
 
   * {
