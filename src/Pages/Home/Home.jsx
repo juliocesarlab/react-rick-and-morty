@@ -43,7 +43,6 @@ export const Home = () => {
             filteredSearch[0];
 
           removeItemFromScene();
-
           setCardInfo([
             {
               id,

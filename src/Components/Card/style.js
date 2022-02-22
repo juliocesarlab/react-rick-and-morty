@@ -21,15 +21,24 @@ export const StyledCard = styled.div`
 
   transition: all 1s;
   transform: perspective(1px) translateZ(0);
-  animation: flutuate 2s infinite;
+  animation: show 1s 0s forwards, flutuate 2s 1s infinite;
 
   @media (max-width: 320px) {
     height:  35rem;
   }
 
- 
-
   //animations
+
+  @keyframes show {
+    0% {
+      transform: translateY(2000px);
+      
+    }
+
+    100% {
+      transform:  translateY(-16px);
+    }
+  }
 
   @keyframes flutuate {
   0% {

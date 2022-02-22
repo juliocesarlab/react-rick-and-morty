@@ -98,6 +98,7 @@ export const AllCharacters = () => {
         ) : (
           <h1>Carregando</h1>
         )}
+        <Pagination pageNumbers={42} />
       </AllCharactersContainer>
       <GoTop><a href="#navbar"><img src={arrowUp} alt="Up" width="35px"/></a></GoTop>
       

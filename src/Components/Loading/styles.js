@@ -17,11 +17,16 @@ export const LoadingCard = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  animation: loading 1.5s infinite;
+  animation: show 1s forwards;
 
-  @keyframes loading {
-    to {
-      background-position: 315px 0, 0 0, 0 190px, 50px 195px;
+  @keyframes show {
+    0% {
+      transform: translateY(2000px);
+      
+    }
+
+    100% {
+      transform:  translateY(-16px);
     }
   }
 `;

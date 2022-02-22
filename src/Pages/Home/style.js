@@ -38,11 +38,8 @@ export const HomeContainer = styled.div`
     }
   }
 
-  
-
   //Start
   height: calc(100vh - 150px);
-  
   
   width: 100%;
   max-width: 1100px;
@@ -60,13 +57,11 @@ export const HomeContainer = styled.div`
     justify-content: center;
     align-items: center;
     gap: 2rem;
+
     height: inherit;
     min-height: calc(100vh - 90px);
-    
-    
   }
   
-
   .gif-wrapper {
     position: fixed;
     right: 0;
